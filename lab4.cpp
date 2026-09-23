@@ -20,7 +20,20 @@ public:
         cout << id << ": " << name << endl;
     }
 };
+void removeById(vector<Student>& students, int id)
+{
+    for (int i = 0; i < students.size(); i++)
+    {
+        if (students[i].id == id)
+        {
+            students.erase(students.begin() + i);
+            cout << "Student removed." << endl;
+            return;
+        }
+    }
 
+    cout << "Student not found." << endl;
+}
 int main() 
 {
     int choice;
